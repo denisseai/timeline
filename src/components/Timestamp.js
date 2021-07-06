@@ -1,4 +1,5 @@
 import moment from 'moment';
+import PropTypes from 'prop-types';
 
 const Timestamp = (props) => {
   const time = moment(props.time);
@@ -6,6 +7,9 @@ const Timestamp = (props) => {
   const relative = time.fromNow();
 
   return <span title={absolute}>{relative}</span>;
+};
+Timestamp.propTypes = {
+  time: PropTypes.string.isRequired
 };
 
 export default Timestamp;
